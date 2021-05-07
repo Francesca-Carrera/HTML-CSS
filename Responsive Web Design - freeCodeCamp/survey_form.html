@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Survey form</title>
+    <link rel="stylesheet" href="survey_form_style.css">
+</head>
+<body>
+    <header>
+        <h1 id="title">Infojobs Survey form</h1>
+        <p id="description"><em>Thank you for taking the time to help us improve the platform</em></p>
+    </header>
+    
+    <form id="survey-form">
+        <div class="input-headings">
+            <label id="name-label" for="name">Name</label>
+            <input type="text" name="name" id="name" placeholder="Enter your name" class="form-inputs" required>
+        </div>
+        
+        <div>
+            <label id="email-label" for="email">Email</label>
+            <input id="email" name="email" type="email" placeholder="Enter your email" class="form-inputs" required> 
+        </div>
+        
+        <div>
+            <label id="number-label" for="age">Age (optional)</label>
+            <input id="number" name="age" type="number" min="10" max="99" placeholder="Age" class="form-inputs" required>
+        </div>
+        <br>
+        
+        <div>
+            <span>Which option best describes your current role?</span>
+            <br>
+            <select id="dropdown" name="role" class="form-inputs" required>
+                <option selected disabled>Select current role</option>
+                <option value="Undergraduate">Undergraduate</option>
+                <option value="Recent graduate">Recent graduate</option>
+                <option value="Fresh graduate">Fresh graduate</option>
+                <option value="Part time Job">Part time Job</option>
+                <option value="Full time Job">Full time Job</option>
+                <option value="Freelancer">Freelancer</option>
+                <option value="Unemployed">Unemployed</option>
+            </select>    
+        </div>
+        <br>
+    
+        <div>
+         <span>Would you recommend Infojobs to a friend?</span><br>
+         <label><input type="radio" value="definitively" name="user-recommend" checked>Definitely</label><br>
+         <label><input type="radio" value="maybe" name="user-recommend" checked>Maybe</label><br>
+         <label><input type="radio" value="not sure" name="user-recommend" checked>Not sure</label>
+        </div>
+        <br>
+
+        <div>
+            <span>How did you hear about us?</span>
+            <br>
+            <label>
+                <input type="checkbox" name="contacts" value="search engine">Search engine (Google, Yahoo, etc.)</label><br>
+            <label>
+                <input type="checkbox" name="contacts" value="recommended by a friend">Recommended by a friend</label><br>
+            <label>
+                <input type="checkbox" name="contacts" value="social media">Social media</label><br>    
+            <label>
+                <input type="checkbox" name="contacts" value="spot or publication">Spot or publication</label><br>    
+            <label>
+                <input type="checkbox" name="contacts" value="other">Other</label>
+        </div>
+        <br>
+
+        <div>
+            <span>Any comments or suggestions?</span>
+            <br>
+            <textarea name="comments" rows="8" cols="68">Enter your comment here...</textarea>
+        </div>
+        <br>
+
+        <div>
+            <button type="submit" id="submit" class="submit-button">
+              Submit
+            </button>
+        </div>
+    </form>    
+</body>        
