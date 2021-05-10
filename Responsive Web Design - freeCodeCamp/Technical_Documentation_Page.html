@@ -1,0 +1,147 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Technical_Documentation_Page</title>
+    <link rel="stylesheet" href="Technical_Documentation_Page_Style.css">
+</head>
+<body>
+    <nav id="navbar">
+        <header>Learn C</header>
+        <ul>
+            <li><a class="nav-link" href="#Introduction">Introduction</a></li> 
+            <li><a class="nav-link" href="#Our_first_program">Our first program</a></li>
+            <li><a class="nav-link" href="#Data_types">Data types</a></li>
+            <li><a class="nav-link" href="#Defining_variables">Defining variables</a></li>
+            <li><a class="nav-link" href="#Arrays">Arrays</a></li>
+        </ul>
+    </nav>
+    <main id="main-doc">
+        <section class="main-section" id="Introduction">
+            <header>Introduction</header>
+            <article>
+                <p>
+                    The C programming language is a general purpose programming language, which relates closely to the way machines work. Understanding how computer memory works is an important aspect of the C programming language. Although C can be considered as "hard to learn", C is in fact a very simple language, with very powerful capabilities.
+                </p>
+                <p>
+                    C is a very common language, and it is the language of many applications such as Windows, the Python interpreter, Git, and many many more. 
+                </p> 
+                <p>
+                    C is a compiled language - which means that in order to run it, the compiler (for example, GCC or Visual Studio) must take the code that we wrote, process it, and then create an executable file. This file can then be executed, and will do what we intended for the program to do.
+                </p> 
+            </article>   
+        <section class="main-section" id="Our_first_program">
+            <header>Our first program</header>
+            <article>
+                <p> 
+                    Every C program uses libraries, which give the ability to execute necessary functions. For example, the most basic function called <em>printf</em>, which prints to the screen, is defined in the <em>stdio.h</em> header file.
+                </p>
+                <p>      
+                    To add the ability to run the <em>printf</em> command to our program, we must add the following include directive to our first line of the code:
+                </p>  
+                <code>#include &lt;stdio.h&gt;</code>    
+                <p>
+                    The second part of the code is the actual code which we are going to write. The first code which will run will always reside in the <em>main</em> function.
+                </p>
+                <code>int main() { <br>
+                    ... our code goes here <br>
+                    }
+                </code>
+                <p>
+                    The <em>int</em> keyword indicates that the function <em>main</em> will return an integer - a simple number. The number which will be returned by the function indicates whether the program that we wrote worked correctly. If we want to say that our code was run successfully, we will return the number 0. A number greater than 0 will mean that the program that we wrote failed. <br>
+                    <br>
+                    For this tutorial, we will return 0 to indicate that our program was successful:
+                </p>
+                <code>return: 0;</code>
+                <p>
+                    Notice that every statement in C must end with a semicolon, so that the compiler knows that a new statement has started. <br>
+                    <br>     
+                    Last but not least, we will need to call the function <em>printf</em> to print our sentence.
+                </p>
+            </article>
+        </section>           
+        <section class="main-section" id="Data_types">
+            <header>Data types</header>
+            <article>
+                C has several types of variables, but there are a few basic types:
+                <ul>
+                    <li>Integers - whole numbers which can be either positive or negative. Defined using <em>char, int, short, long or long long</em>.</li>
+                    <li>Unsigned integers - whole numbers which can only be positive. Defined using <em>unsigned char, unsigned int, unsigned short, unsigned long or unsigned long long</em>.</li>
+                    <li>Floating point numbers - real numbers (numbers with fractions). Defined using <em>float</em> and <em>double</em>.</li>
+                    <li>Structures - will be explained later, in the Structures section.</li>
+                    <li></li>
+                </ul>
+                <p>
+                    The different types of variables define their bounds. A <em>char</em> can range only from -128 to 127, whereas a <em>long</em>can range from -2,147,483,648 to 2,147,483,647 (<em>long</em> and other numeric data types may have another range on different computers, for example - from –9,223,372,036,854,775,808 to 9,223,372,036,854,775,807 on 64-bit computer). <br>
+                    <br>
+                    Note that C does <em>not</em> have a boolean type. Usually, it is defined using the following notation: <br>
+                    <br>
+                    <code>#define BOOL char <br>
+                          #define FALSE 0 <br>
+                          #define TRUE 1
+                    </code> <br>
+                    <br>
+                    C uses arrays of characters to define strings, and will be explained in the Strings section.
+                </p>.
+            </article>
+        </section>
+        <section class="main-section" id="Defining_variables">
+            <header>Defining variables</header>
+            <article>
+                <p>
+                    For numbers, we will usually use the type <em>int</em>, which an integer in the size of a "word" the default number size of the machine which your program is compiled on. On most computers today, it is a 32-bit number, which means the number can range from -2,147,483,648 to 2,147,483,647. <br>
+                    <br>
+                    To define the variables <em>foo</em> and <em>bar</em>, we need to use the following syntax:
+                </p>
+                <code>int foo; <br>
+                    int bar = 1;
+                </code>
+                <p>
+                    The variable <em>foo</em> can be used, but since we did not initialize it, we don't know what's in it. The variable <em>bar</em> contains the number 1. <br>
+                    <br>
+                    Now, we can do some math. Assuming <em>a, b, c, d, and e</em> are variables, we can simply use plus, minus and multiplication operators in the following notation, and assign a new value to a: <br>
+                    <br>
+                    <code>
+                        int a = 0, b = 1, c = 2, d = 3, e = 4; <br>
+                        a = b - c + d * e; <br>
+                        printf("%d", a); /* will print 1-2+3*4 = 11 */
+                    </code>
+                </p>
+            </article>
+        </section>
+        <section class="main-section" id="Arrays">
+            <header>Arrays</header>
+            <article>
+                <p>
+                    Arrays are special variables which can hold more than one value under the same variable name, organised with an index. Arrays are defined using a very straightforward syntax: <br>
+                    <br>
+                    <code>
+                        /* defines an array of 10 integers */ <br>
+                        int numbers[10] ; <br>
+                    </code>
+                    <br>
+                    Accessing a number from the array is done using the same syntax. Notice that arrays in C are zero-based, which means that if we defined an array of size 10, then the array cells 0 through 9 (inclusive) are defined. numbers[10] is not an actual value. <br>
+                    <br>
+                    <code>
+                        int numbers[10]; <br>
+                        /* populate the array */ <br>
+                        numbers[0] = 10; <br>
+                        numbers[1] = 20; <br>
+                        numbers[2] = 30; <br>
+                        numbers[3] = 40; <br>
+                        numbers[4] = 50; <br>
+                        numbers[5] = 60; <br>
+                        numbers[6] = 70; <br>
+                        /* print the 7th number from the array, which has an index of 6 */
+                        printf("The 7th number in the array is %d", numbers[6]); <br>
+                    </code>
+                    <br>
+                    Arrays can only have one type of variable, because they are implemented as a sequence of values in the computer's memory. Because of that, accessing a specific array cell is very efficient.                   
+                </p>
+            </article>
+        </section>
+    </main>
+
+    
+</body>
+</html>
